@@ -1,0 +1,58 @@
+.scheduleWrapper .monthWrapper {
+  margin-top: 20px;
+  height: calc(100vh / 12);
+  text-align: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 30px;
+  line-height: calc(100vh / 12);
+  background-color: #e9c46a;
+  justify-items: center;
+}
+
+.scheduleWrapper .monthWrapper .backIcon,
+.scheduleWrapper .monthWrapper .forwardIcon {
+  height: calc(100vh / 12);
+  font-size: 30px;
+  line-height: calc(100vh / 12);
+  cursor: pointer;
+  color: white;
+}
+
+.scheduleWrapper .monthWrapper .backIcon:hover,
+.scheduleWrapper .monthWrapper .forwardIcon:hover {
+  color: #264653;
+}
+
+.scheduleWrapper .monthWrapper .backIcon {
+  margin-left: 10px;
+}
+
+.scheduleWrapper .monthWrapper .forwardIcon {
+  margin-right: 10px;
+}
+
+.scheduleWrapper .monthWrapper .monthText {
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 3px;
+  word-spacing: 6px;
+}
+
+.scheduleWrapper .table {
+  width: 100%;
+  text-align: center;
+}
+
+.scheduleWrapper .table th {
+  height: calc(100vh / 12);
+  background-color: #264653;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */

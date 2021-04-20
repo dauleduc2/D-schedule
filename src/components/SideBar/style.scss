@@ -1,0 +1,11 @@
+.sideBarWrapper {
+  width: 100%;
+  height: calc(100vh - 50px);
+  border-left: 1px solid black;
+  .title {
+    text-align: center;
+    padding-top: 10px;
+    color: #e76f51;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,36 @@
+.navigationWrapper {
+  width: 100%;
+  background-color: #2fb1a2;
+  height: 50px;
+  //   padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  .logo {
+    a {
+      font-family: "Pacifico", cursive;
+      color: white;
+      font-size: 20px;
+      line-height: 50px;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+  }
+  .nav-selection {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    a {
+      text-decoration: none;
+      list-style: none;
+      font-size: 20px;
+      width: 50%;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+      color: white;
+      &:hover {
+        background-color: #2a9d8f;
+      }
+    }
+  }
+}

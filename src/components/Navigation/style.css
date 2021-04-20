@@ -1,0 +1,47 @@
+.navigationWrapper {
+  width: 100%;
+  background-color: #2fb1a2;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navigationWrapper .logo a {
+  font-family: "Pacifico", cursive;
+  color: white;
+  font-size: 20px;
+  line-height: 50px;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.navigationWrapper .nav-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 20%;
+}
+
+.navigationWrapper .nav-selection a {
+  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+  width: 50%;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  color: white;
+}
+
+.navigationWrapper .nav-selection a:hover {
+  background-color: #2a9d8f;
+}
+/*# sourceMappingURL=style.css.map */
