@@ -1,0 +1,305 @@
+.chooseDayBoxWrapper {
+  width: 50vw;
+  height: calc(50vh + 40px + 50px);
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: none;
+}
+
+.chooseDayBoxWrapper .currentSelectionNavigation {
+  position: relative;
+  letter-spacing: 2px;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  background-color: #274754;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+}
+
+.chooseDayBoxWrapper .navigationOfBox {
+  background-color: #2fb1a2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+}
+
+.chooseDayBoxWrapper .navigationOfBox .tabs {
+  text-align: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.02857em;
+  color: white;
+  font-weight: 500;
+  width: calc(100% / 2);
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.chooseDayBoxWrapper .navigationOfBox .downSideLine {
+  width: calc(100% / 2);
+  height: 3px;
+  background-color: red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.chooseDayBoxWrapper .content {
+  height: calc(50vh);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: hidden;
+  width: 150vw;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.chooseDayBoxWrapper .content .monthContent,
+.chooseDayBoxWrapper .content .yearContent {
+  height: calc(50vh);
+  width: 50vw;
+}
+
+.chooseDayBoxWrapper .content .monthContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #363636;
+}
+
+.chooseDayBoxWrapper .content .yearContent .selectionArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.chooseDayBoxWrapper .content .yearContent .selectionArea .yearSelectionBox {
+  overflow: hidden;
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #363636;
+}
+
+.chooseDayBoxWrapper .content .yearContent .selectionArea .yearSelectionBox .monthNameBox {
+  height: calc((50vh) / 3);
+  line-height: calc((50vh) / 3);
+}
+
+.chooseDayBoxWrapper .content .yearContent .selectionArea .yearSelectionBox .notThisDecade {
+  font-size: 20px;
+  text-transform: capitalize;
+  -webkit-box-flex: 25%;
+      -ms-flex: 25%;
+          flex: 25%;
+  text-align: center;
+  background-color: transparent;
+  line-height: calc((50vh) / 3);
+  cursor: pointer;
+  color: white;
+  color: rgba(255, 255, 255, 0.204);
+}
+
+.chooseDayBoxWrapper .content .yearContent .selectionArea .chooseDecadeArea {
+  background-color: #f4a261;
+  width: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.chooseDayBoxWrapper .content .yearContent .selectionArea .previousButton,
+.chooseDayBoxWrapper .content .yearContent .selectionArea .nextButton {
+  height: calc((50vh) / 2);
+  line-height: calc((50vh) / 2);
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.chooseDayBoxWrapper .content .yearContent .selectionArea .upIcon,
+.chooseDayBoxWrapper .content .yearContent .selectionArea .downIcon {
+  font-size: 40px;
+}
+
+.chooseDayBoxWrapper .content .yearContent .selectionArea .previousButton {
+  border-bottom: solid 5px black;
+}
+
+.chooseDayBoxWrapper .content .monthNameBox {
+  font-size: 20px;
+  text-transform: capitalize;
+  -webkit-box-flex: 23%;
+      -ms-flex: 23%;
+          flex: 23%;
+  margin: 3px;
+  text-align: center;
+  background-color: transparent;
+  line-height: calc(((50vh) / 3) - 6px);
+  cursor: pointer;
+  color: white;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.chooseDayBoxWrapper .content .monthNameBox:hover {
+  -webkit-transform: translateZ(-1px);
+          transform: translateZ(-1px);
+}
+
+.chooseDayBoxWrapper .content .monthNameBox::before {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.chooseDayBoxWrapper .content .monthNameBox:hover::before {
+  width: calc(100% + 6px);
+  left: -3px;
+}
+
+.chooseDayBoxWrapper .content .monthNameBox::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.chooseDayBoxWrapper .content .monthNameBox:hover::after {
+  width: calc(100% + 3px);
+  left: 0;
+}
+
+.chooseDayBoxWrapper .content .monthNameBox .text::before {
+  content: "";
+  width: 3px;
+  height: 0;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: -3px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.chooseDayBoxWrapper .content .monthNameBox .text:hover::before {
+  height: calc(100% + 3px);
+  top: 0;
+}
+
+.chooseDayBoxWrapper .content .monthNameBox .text::after {
+  content: "";
+  width: 3px;
+  height: 0;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  right: -3px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.chooseDayBoxWrapper .content .monthNameBox .text:hover::after {
+  height: calc(100% + 3px);
+  top: 0;
+}
+
+.chooseDayBoxWrapper .content .selected {
+  background-color: #03a9f4;
+}
+
+.chooseDayBoxWrapper .content .selected::before {
+  background-color: #c3941d;
+  width: calc(100% + 6px);
+  left: -3px;
+}
+
+.chooseDayBoxWrapper .content .selected::after {
+  width: calc(100% + 3px);
+  left: 0;
+  background-color: #c3941d;
+}
+
+.chooseDayBoxWrapper .content .selected .text::before {
+  height: calc(100% + 3px);
+  top: 0;
+  background-color: #c3941d;
+}
+
+.chooseDayBoxWrapper .content .selected .text::after {
+  height: calc(100% + 3px);
+  top: 0;
+  background-color: #c3941d;
+}
+
+.confirmButtonWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  bottom: calc(((100vh - (50vh + 40px + 50px)) / 2) - 44px);
+  right: 25vw;
+  z-index: 5;
+  display: none;
+}
+
+.confirmButtonWrapper .cancelButton {
+  margin-right: 10px;
+}
+/*# sourceMappingURL=style.css.map */

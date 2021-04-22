@@ -1,0 +1,27 @@
+td {
+  height: calc(100vh / 9);
+  width: calc(100vw / 7);
+  cursor: pointer;
+}
+
+td:hover {
+  background-color: #e76f51;
+}
+
+.notThisMonth {
+  color: rgba(0, 0, 0, 0.2);
+  cursor: unset !important;
+}
+
+.notThisMonth:hover {
+  background-color: unset !important;
+}
+
+.activeDay {
+  background-color: #2fb1a2;
+}
+
+.selectedSquare {
+  outline: solid #274754 3px;
+}
+/*# sourceMappingURL=style.css.map */
