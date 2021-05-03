@@ -1,5 +1,5 @@
 td {
-  height: calc(100vh / 9);
+  height: calc(100vh / 8);
   width: calc(100vw / 7);
   cursor: pointer;
 }
@@ -23,5 +23,10 @@ td:hover {
 
 .selectedSquare {
   outline: solid #274754 3px;
+}
+
+.squareOfDay {
+  background-color: none;
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */

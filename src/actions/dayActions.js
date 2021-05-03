@@ -31,6 +31,12 @@ export const setYear = (year) => {
     payload: year,
   };
 };
+export const setDay = (day) => {
+  return {
+    type: types.SET_DAY_SELECTED,
+    payload: day,
+  };
+};
 export const getConfirmationOfSelectedDay = (month, year) => {
   return {
     type: types.GET_CONFIRMATON_OF_SELECTED_DAY,

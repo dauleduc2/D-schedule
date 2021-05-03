@@ -4,3 +4,8 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+.mainContentWrapper {
+  /* display: flex; */
+  overflow: hidden;
+  position: relative;
+}

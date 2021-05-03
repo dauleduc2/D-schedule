@@ -1,0 +1,23 @@
+.contextMenuWrapper {
+  flex-direction: column;
+  position: absolute;
+  background-color: lightblue;
+  z-index: 3;
+  display: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  .selection {
+    width: 125px;
+    text-align: start;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    color: black;
+
+    &:hover {
+      background-color: lightcyan;
+    }
+  }
+  .addEvent {
+  }
+}

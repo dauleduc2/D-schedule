@@ -5,6 +5,7 @@ import ArrowDropUpRoundedIcon from "@material-ui/icons/ArrowDropUpRounded";
 import { useDispatch, useSelector } from "react-redux";
 import * as dayActions from "../../actions/dayActions";
 import { Button } from "@material-ui/core";
+import * as monthFunc from "../../commons/monthFunc.js";
 function ChooseDayBox(props) {
   let { onCloseForm } = props;
   const dispatch = useDispatch();
@@ -15,20 +16,7 @@ function ChooseDayBox(props) {
   if (monthSelected && yearSelected) {
     isDisableConfirmButton = false;
   }
-  let monthList = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+  const monthList = monthFunc.monthList;
 
   let moveLineTo = (pos) => {
     let line = document.getElementById("downSideLine");

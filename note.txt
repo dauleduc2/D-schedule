@@ -1,0 +1,16 @@
+maintenance project : 
+    - reuse func need to write at a file and export :
+        + close and open the chooseDayBox, AddEventPage and GrayLayer
+        + make sure the components don't have any useSelector for fetch data from anywhere, only dispatcher
+    - container and conponents
+        + chooseDayBox can be a components?
+        + the main container is App.js --> SchedulePage + ??? --> components
+        + configInformation is const or commons? check it on google then fix it
+    - UX & UI :
+        + Think more about the font of text in the app, the title of schedule in schedulePage look bad
+            * font-family
+            * letter spacing
+        + animation on appear & disappear the AddEventPage and chooseDayBox components
+        + color & outline on selected & unselected box
+    - expected :
+        + change how sroll bar look like

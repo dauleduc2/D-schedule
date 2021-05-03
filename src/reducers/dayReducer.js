@@ -3,13 +3,16 @@ let today = new Date();
 let month = today.getMonth() + 1;
 let year = today.getFullYear();
 let day = today.getDate();
+let dayWeek = today.getDay() + 1;
 const initialState = {
   day: day,
   month: month,
   year: year,
+  dayWeek: dayWeek,
   yearForSelection: year,
   monthSelected: null,
   yearSelected: null,
+  daySelected: null,
 };
 
 export const dayReducer = (state = initialState, action) => {
@@ -23,6 +26,7 @@ export const dayReducer = (state = initialState, action) => {
       } else {
         decoyState.month += 1;
       }
+
       return {
         ...state,
       };
@@ -34,12 +38,14 @@ export const dayReducer = (state = initialState, action) => {
       } else {
         decoyState.month -= 1;
       }
+
       return {
         ...state,
       };
     case types.NEXT_YEAR_FOR_SELECTION:
       decoyState = state.yearForSelection;
       decoyState += 10;
+
       return {
         ...state,
         yearForSelection: decoyState,
@@ -47,6 +53,7 @@ export const dayReducer = (state = initialState, action) => {
     case types.PREVIOUS_YEAR_FOR_SELECTION:
       decoyState = state.yearForSelection;
       decoyState -= 10;
+
       return {
         ...state,
         yearForSelection: decoyState,
@@ -60,10 +67,15 @@ export const dayReducer = (state = initialState, action) => {
       };
     case types.SET_YEAR_SELECTED:
       decoyState = action.payload;
-
       return {
         ...state,
         yearSelected: decoyState,
+      };
+    case types.SET_DAY_SELECTED:
+      decoyState = action.payload;
+      return {
+        ...state,
+        daySelected: decoyState,
       };
     case types.GET_CONFIRMATON_OF_SELECTED_DAY:
       decoyState = action.payload;

@@ -6,33 +6,24 @@ import calendar from "../../zellerRule/index";
 import DaySquare from "../../components/DaySquare";
 import { useDispatch, useSelector } from "react-redux";
 import * as dayActions from "../../actions/dayActions";
-let printCalendar = (monthArray) => {
-  for (let i = 0; i < 6; i++) {
-    let result = "";
-    for (let j = 0; j < 7; j++) {
-      result = result + monthArray[i * 7 + j] + "\t";
-    }
-    console.log(result);
-  }
-};
+import * as monthFuc from "../../commons/monthFunc";
 function SchedulePage() {
   useEffect(() => {
     let daySquareList = document.getElementsByClassName("squareOfDay");
     for (let i = 0; i < daySquareList.length; i++) {
       const element = daySquareList[i];
-      // console.log(element.className);
       if (element.className === "squareOfDay selectedSquare") {
         element.classList.remove("selectedSquare");
       }
     }
   });
   const dispatch = useDispatch();
-  let today = new Date();
-  let currentMonth = today.getMonth() + 1;
-  let currentYear = today.getFullYear();
-  let currentDay = today.getDate();
-  let month = useSelector((state) => state.day.month);
-  let year = useSelector((state) => state.day.year);
+  const today = new Date();
+  const currentMonth = today.getMonth() + 1;
+  const currentYear = today.getFullYear();
+  const currentDay = today.getDate();
+  const month = useSelector((state) => state.day.month);
+  const year = useSelector((state) => state.day.year);
   let renderCalender = (calender, line) => {
     let result;
     result = calender.map((day, index) => {
@@ -42,9 +33,13 @@ function SchedulePage() {
           month === currentMonth &&
           year === currentYear
         ) {
-          return <DaySquare day={day} activeDay={true} />;
+          return (
+            <DaySquare day={day} activeDay={true} month={month} year={year} />
+          );
         } else {
-          return <DaySquare day={day} activeDay={false} />;
+          return (
+            <DaySquare day={day} activeDay={false} month={month} year={year} />
+          );
         }
       }
     });
@@ -68,47 +63,8 @@ function SchedulePage() {
   let goToNextMonth = () => {
     dispatch(dayActions.nextMonth());
   };
-  let monthText;
-  switch (month) {
-    case 1:
-      monthText = "January";
-      break;
-    case 2:
-      monthText = "February";
-      break;
-    case 3:
-      monthText = "March";
-      break;
-    case 4:
-      monthText = "April";
-      break;
-    case 5:
-      monthText = "May";
-      break;
-    case 6:
-      monthText = "June";
-      break;
-    case 7:
-      monthText = "July";
-      break;
-    case 8:
-      monthText = "August";
-      break;
-    case 9:
-      monthText = "September";
-      break;
-    case 10:
-      monthText = "October";
-      break;
-    case 11:
-      monthText = "November";
-      break;
-    case 12:
-      monthText = "December";
-      break;
-    default:
-      break;
-  }
+  let monthText = monthFuc.changeMonthNumberToWord(month);
+
   return (
     <div className="scheduleWrapper">
       <div class="monthWrapper">

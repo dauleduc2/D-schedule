@@ -1,0 +1,90 @@
+.dayScheduleWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: white;
+  transform: translate(100%);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  overflow: scroll;
+  th {
+    width: calc(100% / 8);
+  }
+  tr {
+    height: calc((100vh - 100vh / 12- 50px) / 9);
+  }
+  .monthWrapper {
+    .monthText {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .fromText {
+        margin: 0 15px;
+      }
+      .toText {
+        margin: 0 15px;
+      }
+    }
+  }
+
+  .tdWrapper {
+    width: auto;
+    margin: auto;
+    position: relative;
+    .taskWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 10px 10px;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      .title {
+        .subject {
+          font-weight: 600;
+          color: #0557ad;
+          text-transform: capitalize;
+        }
+        .numberOfRoom {
+          font-weight: 700;
+          margin-left: 5px;
+        }
+      }
+      .description {
+        .noteText {
+          font-weight: 700;
+        }
+      }
+      .importance,
+      .unimportant {
+        font-size: 12px;
+        border-radius: 4px;
+        padding: 3px 10px;
+        color: white;
+        letter-spacing: 0.7px;
+        align-items: flex-end;
+        min-width: 90px;
+        max-width: 130px;
+      }
+      .importance {
+        background-color: red;
+      }
+      .unimportant {
+        background-color: green;
+      }
+    }
+  }
+}
+
+.goIn {
+  opacity: 1;
+  z-index: 2;
+  transform: translate(0%);
+}
