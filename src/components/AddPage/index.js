@@ -20,7 +20,12 @@ function AddPage(props) {
     monthSelected,
     yearSelected,
     editting,
+    initialValues,
   } = props;
+  let isChangeTime = false;
+  let initialTime = initialValues?.time;
+  useEffect(() => {}, []);
+
   const dispatch = useDispatch();
   let onCancel = () => {
     let addPage = document.getElementsByClassName("addPageWrapper")[0];
@@ -45,10 +50,24 @@ function AddPage(props) {
     value.daySelected = daySelected;
     value.monthSelected = monthSelected;
     value.yearSelected = yearSelected;
-    dispatch(dayScheduleActions.addTask(value));
+    if (editting) {
+      dispatch(dayScheduleActions.updateTask(value, initialTime));
+    } else {
+      dispatch(dayScheduleActions.addTask(value));
+    }
     reset();
+    let grayLayer = document.getElementById("grayLayerWrapper");
+    let addPage = document.getElementsByClassName("addPageWrapper");
+    if (addPage) {
+      addPage[0].style.display = "none";
+    }
+    if (grayLayer) {
+      grayLayer.style.display = "none";
+    }
   };
-
+  let onChangeTime = () => {
+    isChangeTime = true;
+  };
   return (
     <div className="addPageWrapper">
       {editting ? (
@@ -86,6 +105,7 @@ function AddPage(props) {
           name="time"
           component={renderSelectField}
           label="Time"
+          onChange={onChangeTime}
         >
           {renderMenuItem()}
         </Field>
@@ -146,15 +166,15 @@ const validate = (values) => {
   return errors;
 };
 
-//create config func
-let createReduxForm = reduxForm({
+AddPage = reduxForm({
   form: "addForm",
+  enableReinitialize: true,
   validate,
-});
-AddPage = createReduxForm(AddPage);
+})(AddPage);
 AddPage = connect((state) => {
   return {
     initialValues: state.daySchedule.dataEditting,
   };
 })(AddPage);
+
 export default AddPage;

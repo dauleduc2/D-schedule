@@ -16,13 +16,13 @@ export const removeTask = (time, slot) => {
   };
 };
 
-export const updateTask = (time, slot, data) => {
+export const updateTask = (data, initialTime) => {
   return {
     type: types.UPDATE_TASK,
     payload: {
-      time,
-      slot,
       data,
+
+      initialTime,
     },
   };
 };

@@ -48,6 +48,7 @@ function App() {
   const daySchedule = useSelector((state) => state.daySchedule.daySchedule);
   const editting = useSelector((state) => state.daySchedule.editting);
   const dataEditting = useSelector((state) => state.daySchedule.dataEditting);
+  // console.log(daySchedule);
   let monthText = monthTransform.changeMonthNumberToWord(month);
   let renderContent = () => {
     return (
